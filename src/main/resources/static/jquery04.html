@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script>
+	// 객체 배열 : List<PortalVo> portalList
+	let arr = [
+		{name:'Naver', link:'https://www.naver.com'},
+		{name:'Nate', link:'https://www.nate.com'},
+		{name:'Daum', link:'https://www.daum.net'},
+		{name:'google', link:'https://www.google.com'},
+		{name:'Microsoft', link:'https://www.microsoft.com'}		
+	]
+	
+  $(function() {
+	let msg='';
+	// js 반복문
+	arr.forEach(function(item,index){
+		msg +=`<li>`
+		msg +=`<a href="${item.link}">`
+		msg +=`${item.name}`
+		msg +=`</a>`
+		msg +=`</li>`
+	
+	
+	});
+	$('ul:first').html(msg);
+	
+	
+	
+	//jquery 반복문
+	msg = '';
+	$.each(arr,function(index, item){
+		msg +=`<li>`
+		msg +=`<a href="${item.link}">`
+		msg +=`${item.name}`
+		msg +=`</a>`
+		msg +=`</li>`
+	
+		})
+		$('ul').eq(1).html(msg);
+	
+  })
+</script>
+</head>
+<body>
+   <ul></ul>
+   <ul></ul>
+   <div></div><button id="btnGo">이동</button>
+   <div></div>
+</body>
+</html>
